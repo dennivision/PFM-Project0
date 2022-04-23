@@ -20,6 +20,12 @@ PFMProject0AudioProcessorEditor::PFMProject0AudioProcessorEditor (PFMProject0Aud
 
 PFMProject0AudioProcessorEditor::~PFMProject0AudioProcessorEditor()
 {
+    if (audioProcessor.shouldPlaySound)
+    {
+        audioProcessor.shouldPlaySound->beginChangeGesture();
+        audioProcessor.shouldPlaySound->setValueNotifyingHost(false);
+        audioProcessor.shouldPlaySound->endChangeGesture();
+    }
 }
 
 //==============================================================================
@@ -37,4 +43,19 @@ void PFMProject0AudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+}
+
+void PFMProject0AudioProcessorEditor::mouseDown(const juce::MouseEvent& e)
+{
+    //audioProcessor.shouldPlaySound = true;
+}
+
+void PFMProject0AudioProcessorEditor::mouseUp(const juce::MouseEvent& e)
+{
+    if (audioProcessor.shouldPlaySound)
+    {
+        audioProcessor.shouldPlaySound->beginChangeGesture();
+        audioProcessor.shouldPlaySound->setValueNotifyingHost(!audioProcessor.shouldPlaySound->get());
+        audioProcessor.shouldPlaySound->endChangeGesture();
+    }
 }

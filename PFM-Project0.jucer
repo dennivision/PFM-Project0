@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="IZxtPn" name="PFM-Project0" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginCharacteristicsValue="pluginIsSynth">
   <MAINGROUP id="E6hsdP" name="PFM-Project0">
     <GROUP id="{B1639650-4295-1B6D-F62C-1F6779AD8099}" name="Source">
       <FILE id="nMVtda" name="PluginProcessor.cpp" compile="1" resource="0"
@@ -17,7 +18,7 @@
   <EXPORTFORMATS>
     <VS2019 targetFolder="Builds/VisualStudio2019">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="PFM-Project0"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PFM-Project0" enablePluginBinaryCopyStep="1"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="PFM-Project0"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
@@ -35,6 +36,26 @@
         <MODULEPATH id="juce_gui_extra" path="../../../../JUCE/modules"/>
       </MODULEPATHS>
     </VS2019>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_core" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:\Users\Dennis\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:\Users\Dennis\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2022>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
