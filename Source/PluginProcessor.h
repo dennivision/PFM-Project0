@@ -8,8 +8,8 @@
 
 /*
  * TODO: click anywhere on the window and play a note
+ * TODO: automation should update window display
  * TODO: if you click and drag, it'll change the pitch of the note
- * TODO: should we play a sound?
  */
 
 #pragma once
@@ -60,11 +60,14 @@ public:
 	void setStateInformation (const void* data, int sizeInBytes) override;
 
 	juce::AudioParameterBool* shouldPlaySound = nullptr;
+	juce::AudioParameterFloat* bgColor = nullptr;
+
+	static void UpdateAutomatableParameter(juce::RangedAudioParameter*, float value);
 
 private:
+	juce::AudioProcessorValueTreeState apvts;
 	juce::Random r;
-	
-	
+
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PFMProject0AudioProcessor)
 };
